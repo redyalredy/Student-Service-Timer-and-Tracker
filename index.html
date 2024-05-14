@@ -1,0 +1,48 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+</head>
+
+<body>
+
+    <div class="pomodoro">
+        <div id="container-box">
+            <div id = "container-boxheader" class="row">
+                <div class="col-md-6">
+                </div>
+                <div id="clock" class="row">
+                    <div class="timer"><div class="middle"></div></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row"><p>session length<p></div>
+                    <div class="row counter">
+                        <div class="col-md-4">
+                            <button class="btn btn-default" id="sessDec">-</button>        
+                        </div>
+                        <div class="col-md-2">
+                            <div id="session"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-default" id="sessInc">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row" id="btns">
+                        <button class="btn btn-default btn-lg" id="start">start</button>
+                        <button class="btn btn-default btn-lg" id="stop">stop</button>
+                        <button class="btn btn-default btn-lg" id="clear">clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="circle-button">+</button>
+
+      <script src="script.js"></script>
+      
+</body>
+
+  
