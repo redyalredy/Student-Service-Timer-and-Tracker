@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spreadsheet Database</title>
+  <link rel="stylesheet" href="datasheet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>TRI-LEGACY Spreadsheet Database</h1>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button id="searchButton">Search</button>
+    </div>
+    <table id="spreadsheet">
+      <tr>
+        <th contenteditable>Student Name</th>
+        <th contenteditable>Start Time</th>
+        <th contenteditable>End Time</th>
+        <th contenteditable>Pause Time</th>
+        <th contenteditable>Date and Time</th>
+      </tr>
+      <tr class="empty-row">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <div class="buttons">
+      <button id="addButton">ADD ITEM</button>
+      <button id="deleteButton">DELETE ITEM</button>
+      <button id="saveButton">SAVE</button>
+      <button id="exportPdfButton">EXPORT TO PDF</button>
+    </div>
+  </div>
+  <script src="datasheet.js"></script>
+</body>
+</html>
