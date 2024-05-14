@@ -144,10 +144,9 @@ $(document).ready(function() {
 
     $(".circle-button").on("click", function() {
         if (timerCount < maxTimers) {
-            var newTimer = $("#container-box").clone(); // Clone the container
-            newTimer.find(".timer").attr("id", "timer-" + timerCount); // Assign a unique ID to the cloned timer
-            newTimer.find(".circle-button").remove(); // Remove the button from the cloned timer
-            $("#container-box").after(newTimer); // Append the cloned timer after the existing one
+            var newPomodoro = $(".pomodoro").first().clone(); // Clone the first pomodoro section
+            newPomodoro.find(".timer").attr("id", "timer-" + timerCount); // Assign a unique ID to the cloned timer
+            $(".pomodoro-container").append(newPomodoro); // Append the cloned pomodoro section to the container
 
             timerCount++; // Increment the timer count
         }
