@@ -17,6 +17,12 @@ body {
     padding-top: 15px;
     padding-bottom: 25px;  
   }
+  .pomodoro-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: move;
+}
   .circle-button {
     position: fixed;
     bottom: 0px;

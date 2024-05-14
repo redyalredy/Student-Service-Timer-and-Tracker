@@ -144,12 +144,20 @@ $(document).ready(function() {
 
     $(".circle-button").on("click", function() {
         if (timerCount < maxTimers) {
-            var newTimer = $("#pomodoro-box").clone(); // Clone the container
-            newTimer.find(".pomodoro").attr("id", "timer-" + timerCount); // Assign a unique ID to the cloned timer
-            newTimer.find(".circle-button").remove(); // Remove the button from the cloned timer
-            $("#pomodoro-box").after(newTimer); // Append the cloned timer after the existing one
+            var newPomodoroWrapper = $(".pomodoro-wrapper").first().clone(); // Clone the container wrapper
+            newPomodoroWrapper.find(".pomodoro").attr("id", "timer-" + timerCount); // Assign a unique ID to the cloned pomodoro
+            newPomodoroWrapper.css({ top: "0", left: "0" }); // Reset the position of the cloned pomodoro
+            $(".pomodoro-container").append(newPomodoroWrapper); // Append the cloned pomodoro container to the container
+
+            // Initialize the FlipClock for the new pomodoro
+            var clock = newPomodoroWrapper.find(".timer").FlipClock(0, {
+                // FlipClock options and callbacks
+            });
 
             timerCount++; // Increment the timer count
+
+            // Make the new pomodoro container draggable
+            dragElement(newPomodoroWrapper[0]);
         }
     });
 });
