@@ -5,23 +5,19 @@ body {
   }
   #container-box {
     border: 1px solid black;
-    padding: 20px;
+    padding: 5px;
     position: absolute;
+    border-radius: 10px;
 }
   .pomodoro {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;  
-    padding-top: 15px;
-    padding-bottom: 25px;  
   }
   .pomodoro-wrapper {
     position: absolute;
-    top: 0;
-    left: 0;
     cursor: move;
+    width: 5%;  /* adjust as needed */
+    height: 5%; /* adjust as needed */
+    margin: auto; /* centers the container */
 }
   .circle-button {
     position: fixed;
@@ -85,11 +81,11 @@ body {
   }
   #stats {
     background-color: #333333;
-    width: 220px;
+    width: 100px;
     height: 70px;  
     border-radius: 10px;
     color: #CCCCCC;
-    font-size: 45px;
+    font-size: 20px;
     text-align: center;
   }
   #statRow {

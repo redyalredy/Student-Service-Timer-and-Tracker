@@ -138,26 +138,49 @@
 
 // CODE FOR DUPLICATION BUTTON
 
-$(document).ready(function() {
+$(document).ready(function () {
     var maxTimers = 14; // Maximum number of timers allowed
     var timerCount = 1; // Initial timer count
-
-    $(".circle-button").on("click", function() {
-        if (timerCount < maxTimers) {
-            var newPomodoroWrapper = $(".pomodoro-wrapper").first().clone(); // Clone the container wrapper
-            newPomodoroWrapper.find(".pomodoro").attr("id", "timer-" + timerCount); // Assign a unique ID to the cloned pomodoro
-            newPomodoroWrapper.css({ top: "0", left: "0" }); // Reset the position of the cloned pomodoro
-            $(".pomodoro-container").append(newPomodoroWrapper); // Append the cloned pomodoro container to the container
-
-            // Initialize the FlipClock for the new pomodoro
-            var clock = newPomodoroWrapper.find(".timer").FlipClock(0, {
-                // FlipClock options and callbacks
-            });
-
-            timerCount++; // Increment the timer count
-
-            // Make the new pomodoro container draggable
-            dragElement(newPomodoroWrapper[0]);
-        }
+  
+    $(".circle-button").on("click", function () {
+      if (timerCount < maxTimers) {
+        var newPomodoroWrapper = $(".pomodoro-wrapper").first().clone(); // Clone the container wrapper
+        newPomodoroWrapper.find(".pomodoro").attr("id", "timer-" + timerCount); // Assign a unique ID to the cloned pomodoro
+        newPomodoroWrapper.css({ top: "0", left: "0" }); // Reset the position of the cloned pomodoro
+        $(".pomodoro-container").append(newPomodoroWrapper); // Append the cloned pomodoro container to the container
+  
+        // Initialize the FlipClock for the new pomodoro
+        var clock = newPomodoroWrapper.find(".timer").FlipClock({
+          clockFace: "MinuteCounter",
+          autoStart: false, // Set autoStart to false to prevent the clock from starting instantly
+          callbacks: {
+            interval: function () {
+              if (clock.getTime() == 0) {
+                if (pos == "session") {
+                  clock.setTime(countB * 60);
+                  clock.start();
+                  pos = "break";
+                  $("#stats").html(pos);
+                } else if (pos == "break") {
+                  clock.setTime(countS * 60);
+                  clock.start();
+                  pos = "session";
+                  $("#stats").html(pos);
+                }
+              }
+            },
+          },
+        });
+  
+        // Assign a new ID to the start, stop, and clear buttons of the new clock
+        newPomodoroWrapper.find(".start-button").attr("id", "start-" + timerCount);
+        newPomodoroWrapper.find(".stop-button").attr("id", "stop-" + timerCount);
+        newPomodoroWrapper.find(".clear-button").attr("id", "clear-" + timerCount);
+  
+        // Make the new pomodoro container draggable
+        dragElement(newPomodoroWrapper[0]);
+  
+        timerCount++; // Increment the timer count
+      }
     });
-});
+  });
