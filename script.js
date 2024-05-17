@@ -140,7 +140,7 @@
 
 $(document).ready(function () {
     var maxTimers = 14; // Maximum number of timers allowed
-    var timerCount = 1; // Initial timer count
+    var timerCount = 0; // Initial timer count
   
     $(".circle-button").on("click", function () {
       if (timerCount < maxTimers) {
@@ -184,3 +184,5 @@ $(document).ready(function () {
       }
     });
   });
+
+

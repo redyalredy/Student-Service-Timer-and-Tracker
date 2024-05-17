@@ -5,6 +5,7 @@ const addButton = document.getElementById('addButton');
 const deleteButton = document.getElementById('deleteButton');
 const saveButton = document.getElementById('saveButton');
 const exportPdfButton = document.getElementById('exportPdfButton');
+const menuButton = document.getElementById('menuButton');
 
 // Add event listener for search button
 searchButton.addEventListener('click', searchItems);
@@ -20,6 +21,11 @@ saveButton.addEventListener('click', saveData);
 
 // Add event listener for export PDF button
 exportPdfButton.addEventListener('click', exportPdf);
+
+// Add event listener for menu button
+menuButton.addEventListener('click', function() {
+  window.location.href = 'index.html';
+});
 
 // Export PDF function
 function exportPdf() {
