@@ -150,7 +150,7 @@ $(document).ready(function () {
         $(".pomodoro-container").append(newPomodoroWrapper); // Append the cloned pomodoro container to the container
   
         // Initialize the FlipClock for the new pomodoro
-        var clock = newPomodoroWrapper.find(".timer").FlipClock({
+        var clock = $(".timer").FlipClock({
           clockFace: "MinuteCounter",
           autoStart: false, // Set autoStart to false to prevent the clock from starting instantly
           callbacks: {
@@ -171,6 +171,37 @@ $(document).ready(function () {
             },
           },
         });
+
+        //iugihiu
+        $("#sessInc").on("click", function(){
+          if ($("#session").html() > 0){
+              countS = parseInt($("#session").html());
+              countS+=1;
+              $("#session").html(countS);
+              //clock.setTime(countS*60);
+          }
+          });
+          $("#sessDec").on("click", function(){
+          if ($("#session").html() > 1){
+              countS = parseInt($("#session").html());
+              countS-=1;
+              $("#session").html(countS);
+              //clock.setTime(countS*60);
+          }
+          });
+        ///  
+        
+        $("#stop").on("click", function(){
+          clock.stop();
+          countLama = clock.getTime();
+          posLama = $("#stats").html();
+          });
+          $("#clear").on("click", function(){
+          clock.stop();
+          pos = "pomodoro";
+          $("#stats").html(pos);
+          clock.setTime(0);
+          });
   
         // Assign a new ID to the start, stop, and clear buttons of the new clock
         newPomodoroWrapper.find(".start-button").attr("id", "start-" + timerCount);

@@ -69,9 +69,6 @@ body {
     background-color: #808080;
   }
 
-
-
-
   * {
     -webkit-tap-highlight-color: transparent;
   }
@@ -80,15 +77,23 @@ body {
     outline: none;
   }
   
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #0e3577;
+  }
   
   #webapp_cover {
     position: absolute;
-    top: 50%;
-    right: 0;
-    left: 0;
+    top: 15px; /* Adjust as necessary for spacing */
+    left: 15px; /* Adjust as necessary for spacing */
     width: 39px;
-    margin: 0 auto;
-    transform: translateY(-50%) scale(2);
+    margin: 0;
+    transform: scale(2); /* Adjusted to remove translateY for top-right positioning */
   }
   
   #menu_button {
@@ -136,7 +141,7 @@ body {
   }
   
   #menu_text_bar:before {
-    content: "HOME";
+    content: "MENU";
     position: absolute;
     top: 5px;
     right: 0;
@@ -206,4 +211,4 @@ body {
       transform: rotateZ(0);
     }
   }
-  
+
