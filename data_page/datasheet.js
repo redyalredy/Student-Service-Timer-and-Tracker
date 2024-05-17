@@ -5,6 +5,11 @@ const addButton = document.getElementById('addButton');
 const deleteButton = document.getElementById('deleteButton');
 const saveButton = document.getElementById('saveButton');
 const exportPdfButton = document.getElementById('exportPdfButton');
+const menuButton = document.getElementById('menuButton');
+
+menuButton.addEventListener('click', function() {
+  window.location.href = 'index.html';
+});
 
 
 // Add event listener for search button
