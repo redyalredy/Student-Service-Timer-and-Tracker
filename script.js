@@ -217,3 +217,8 @@ $(document).ready(function () {
   });
 
 
+  const menuButton = document.getElementById('menuButton');
+
+  menuButton.addEventListener('click', function() {
+    window.location.href = 'datasheet.html';
+  });
