@@ -1,95 +1,94 @@
 body {
-    background-color:#C7D0D4;
+    background-color: #C7D0D4;
     background-size: cover; 
     font-family: 'Montserrat', sans-serif;
-  }
-  #container-box {
+}
+#container-box {
     border: 1px solid black;
     padding: 5px;
     position: absolute;
     border-radius: 10px;
 }
-  .pomodoro {
+.pomodoro {
     position: absolute;
-  }
-  .pomodoro-wrapper {
+}
+.pomodoro-wrapper {
     position: absolute;
     cursor: move;
-    width: 5%;  /* adjust as needed */
-    height: 5%; /* adjust as needed */
-    margin: auto; /* centers the container */
+    width: 200px; /* Reduced and fixed width */
+    height: 200px; /* Reduced and fixed height */
+    margin: auto; /* Centers the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-  .circle-button {
+.timer-title {
+  width: 100%; /* Full width of the wrapper */
+  border: none;
+  border-bottom: 1px solid #ccc; /* subtle underline */
+  background: transparent;
+  text-align: center;
+  margin-bottom: 10px; /* Space between title and timer */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+.circle-button {
     position: fixed;
-    bottom: 0px;
-    right: 0px;
-    width: 50px;
-    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
     background-color: #4CAF50;
     color: white;
     border: none;
 }
-  p {
-    text-align: center;
-  }
-  .flip-clock-wrapper{
-    max-width: 460px;
-    margin: 3em auto 2em;
+.flip-clock-wrapper {
+    width: 180px; /* Reduced width */
+    height: 50px; /* Reduced height */
+    margin: 1em auto;
     display: flex;
     justify-content: center;
-  }
-  .col-md-4{
+    font-size: 16px; /* Smaller font size */
+}
+.clock {
+    margin-top: 10px; /* Reduced margin */
+}
+.container {
+    width: 220px; /* Adjusted width */
+}
+.middle {
+    display: inline-block;
+}
+#btns {
     display: flex;
     justify-content: center;
-  }
-  .col-md-2{
-    display: flex;
-    justify-content: center;
-    height: 34px;
-    align-items: center;
-  }
-  .counter{
-    display: flex;
-    justify-content: center;
-  }
-  .clock{
-    margin-top: 30px;
-  }
-  .container {
-    width: 500px;
-  }
-  .middle{
-      display:inline-block;
-  }
-  #btns{
-    display: flex;
-    justify-content: center;
-  }
-  #stop {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .btn {
+}
+#stop {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.btn {
     background-color: #333333;
     color: #CCCCCC;
-  }
-  #sessInc, #sessDec, #breakInc, #breakDec {  
+}
+#sessInc, #sessDec, #breakInc, #breakDec {  
     font-weight: bold;
-  }
-  #stats {
+}
+#stats {
     background-color: #333333;
-    width: 100px;
-    height: 70px;  
+    width: 80px; /* Reduced width */
+    height: 50px; /* Reduced height */
     border-radius: 10px;
     color: #CCCCCC;
-    font-size: 20px;
+    font-size: 16px; /* Smaller font size */
     text-align: center;
-  }
-  #statRow {
+}
+#statRow {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-  }
+}
+
+
