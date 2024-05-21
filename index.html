@@ -6,6 +6,14 @@
 </head>
 
 <body>
+    <div id="webapp_cover">
+        <div id="menu_button">
+          <input type="checkbox" id="menu_checkbox">
+          <label for="menu_checkbox" id="menu_label">
+            <div id="menu_text_bar"></div>
+          </label>
+        </div>
+      </div>
     <div class="pomodoro-container">
         <div class="pomodoro-wrapper">
             <div id="pomodoro-box" class="pomodoro">
@@ -47,6 +55,12 @@
         <button class="circle-button">+</button>
 
       <script src="script.js"></script>
+
+      <script>
+        document.getElementById('menu_button').addEventListener('click', function() {
+          window.location.href = 'datasheet.html';
+        });
+        </script>
       
 </body>
 
