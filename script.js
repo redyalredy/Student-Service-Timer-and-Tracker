@@ -153,6 +153,7 @@ $(document).ready(function () {
             // Initialize the FlipClock for the new pomodoro
             var newClock = newPomodoroWrapper.find(".timer").FlipClock({
                 clockFace: "MinuteCounter",
+                countdown: true,
                 autoStart: false, // Set autoStart to false to prevent the clock from starting instantly
                 callbacks: {
                     interval: function () {
