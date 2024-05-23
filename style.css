@@ -94,17 +94,12 @@ p {
     text-align: center;
 }
 
-.col-md-2{
-    display: flex;
-    justify-content: center;
-    height: 34px;
-    align-items: center;
-  }
-
-  .col-md-4{
-    display: flex;
-    justify-content: center;
-  }
+.col-md-2, .col-md-4 {
+  display: flex;
+  flex-direction: column; /* Aligns children vertically */
+  justify-content: center;
+  align-items: center;
+}
 
   .counter{
     display: flex;
