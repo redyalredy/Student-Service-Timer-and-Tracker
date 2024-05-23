@@ -48,7 +48,7 @@
             //clock.setTime(countS*60);
         }
         });
-        //BREAK
+        //BREAK not really needed 
         $("#breakInc").on("click", function(){
         if ($("#break").html() > 0){
             countB = parseInt($("#break").html());
@@ -175,20 +175,20 @@ $(document).ready(function () {
             });
 
             // Bind event handler to the start button
-            newPomodoroWrapper.find(".start-button").on("click", function() {
+            newPomodoroWrapper.find("#start").on("click", function() {
                 console.log("Starting new timer with session length: " + countS); // Debugging
                 newClock.setTime(countS * 60); // Set the time based on the current session length
                 newClock.start(); // Start the clock
             });
 
         // Bind event handlers to the new buttons
-        newPomodoroWrapper.find(".stop-button").on("click", function() {
+        newPomodoroWrapper.find("#stop").on("click", function() {
           newClock.stop();
           countLama = newClock.getTime();
           posLama = newPomodoroWrapper.find("#stats").html();
         });
 
-        newPomodoroWrapper.find(".clear-button").on("click", function() {
+        newPomodoroWrapper.find("#clear").on("click", function() {
           newClock.stop();
           newClock.setTime(0);
           newPomodoroWrapper.find("#stats").html("pomodoro");
